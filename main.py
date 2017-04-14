@@ -162,7 +162,7 @@ while running:
                     selected[i] = l-1
             elif (selected[i] == 0 and diff == -1) or (selected[i] == l-1 and diff == 1):
                 selected[i] = None
-            else:
+            elif l != 0:
                 selected[i] += diff
 
         if light_rect.collidepoint(down.pos):
@@ -213,5 +213,3 @@ while running:
         draw_button(screen, "Pfeil-rechts", right, (mx, my), mousedown)
 
     pygame.display.flip()
-
-pygame.quit()
