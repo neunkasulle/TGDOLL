@@ -14,9 +14,9 @@ screen = pygame.display.set_mode((sw, sh), pygame.DOUBLEBUF)
 clock = pygame.time.Clock()
 
 res_folder = "res"
-folders = ["Onesies", "Headgear", "Hair", "Glasses", "Beards", "Tops", "Bottoms", "Shoes", "Underfoot"]
-button_pos_l = [(75,515), (105,365), (75,390), (115,410), (85,430), (105,485), (105,550), (90,660), (60,685)]
-button_pos_r = [(545,515), (515,365), (545,390), (505,410), (535, 430), (515,485), (515,550), (530,660), (560,685)]
+folders = ["Onesies", "Headgear", "Hair", "Glasses", "Beards", "Tops", "Shoes", "Bottoms", "Underfoot"]
+button_pos_l = [(75,515), (105,365), (75,390), (115,410), (85,430), (105,485), (90,660), (105,550), (60,685)]
+button_pos_r = [(545,515), (515,365), (545,390), (505,410), (535, 430), (515,485), (530,660), (515,550), (560,685)]
 character_pos = (176,325)
 light_pos = (100,115)
 logo_pos = (35,20)
@@ -140,6 +140,7 @@ while running:
 
     mousedown = False
     downevents = pygame.event.get(pygame.MOUSEBUTTONDOWN)
+    pygame.event.clear()
     for down in downevents:
         if not down.button == 1:
             continue
@@ -207,8 +208,6 @@ while running:
     for left, right in button_rects:
         draw_button(screen, "Pfeil-links", left, (mx, my), mousedown)
         draw_button(screen, "Pfeil-rechts", right, (mx, my), mousedown)
-
-    pygame.event.clear()
 
     pygame.display.flip()
 
