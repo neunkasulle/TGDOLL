@@ -58,7 +58,7 @@ for filename in os.listdir(int_folder):
     interface[filename[:-4]] = pygame.image.load(os.path.join(int_folder, filename)).convert_alpha()
 
 pygame.display.set_icon(interface["Icon-CYP-32x32"])
-pygame.display.set_caption("Choose your player")
+pygame.display.set_caption("Choose Your Player")
 
 gender = "Male"
 selected = [None] * len(folders)
