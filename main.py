@@ -57,6 +57,9 @@ int_folder = os.path.join(res_folder, "Interface")
 for filename in os.listdir(int_folder):
     interface[filename[:-4]] = pygame.image.load(os.path.join(int_folder, filename)).convert_alpha()
 
+pygame.display.set_icon(interface["Icon-CYP-32x32"])
+pygame.display.set_caption("Choose your player")
+
 gender = "Male"
 selected = [None] * len(folders)
 onesie_index = folders.index("Onesies")
