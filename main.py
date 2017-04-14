@@ -74,27 +74,6 @@ male_rect = pygame.Rect(male_pos, interface["Gender-m"].get_size())
 female_rect = pygame.Rect(female_pos, interface["Gender-f"].get_size())
 
 
-"""def rescale_pictures():
-    sw, sh = screen.get_size()
-    images.clear()
-    for folder, l in base_images.items():
-        newlist = []
-        for pic in l:
-            w, h = pic.get_size()
-            fac = min(sw  / w, sh / h)
-            size = (int(w * fac), int(h * fac))
-            try:
-                newlist.append(pygame.transform.smoothscale(pic, size))
-            except Exception:
-                newlist.append(pygame.transform.scale(pic, size))
-        images.append(newlist)
-
-    bw, bh = arrows[0].get_size()
-    button_rects.clear()
-    for height in button_heights:
-        button_rects.append((pygame.Rect(0.2 * sw - bw // 2, height * sh - bh // 2,bw, bh),
-                             pygame.Rect(0.8 * sw - bw // 2, height * sh - bh // 2,bw, bh)))"""
-
 def render_character(target, pos):
     if gender == "Male":
         target.blit(male_character, pos)
@@ -108,6 +87,7 @@ def render_character(target, pos):
         if sel is None:
             continue
         target.blit(accessories[gender][folder][sel], pos)
+
 
 def draw_button(target, name, rect, mousepos, buttondown):
     final_name = name
