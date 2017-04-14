@@ -39,8 +39,9 @@ for gender in ("Male", "Female", "Genderfck"):
     for folder in folders:
         imgs = []
         fol = os.path.join(acc_folder, gender, folder)
-        for filename in os.listdir(fol):
-            imgs.append(pygame.image.load(os.path.join(fol, filename)).convert_alpha())
+        if os.path.exists(fol):
+            for filename in os.listdir(fol):
+                imgs.append(pygame.image.load(os.path.join(fol, filename)).convert_alpha())
         accs[folder] = imgs
     accessories[gender] = accs
 
